@@ -1,0 +1,30 @@
+[build-system]
+requires = ['setuptools>=68']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'fleasion-fflag'
+version = '3.0.0'
+description = 'Fleasion rút gọn: chỉ chỉnh FastFlag Roblox qua proxy ClientSettings (Windows)'
+requires-python = '>=3.12'
+dependencies = [
+    'pyqt6>=6.8.0',
+    'cryptography>=42.0.0',
+    'zstandard>=0.21.0',
+    'certifi>=2024.7.4',
+]
+
+[project.scripts]
+fleasion = 'fleasion.app:main'
+
+[dependency-groups]
+dev = ['pytest>=8.0.0', 'pyinstaller>=6.0.0']
+
+[tool.setuptools.packages.find]
+where = ['src']
+
+[tool.setuptools.package-data]
+fleasion = ['*.ico']
+
+[tool.pytest.ini_options]
+testpaths = ['tests']
